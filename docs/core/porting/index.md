@@ -19,7 +19,7 @@ This is the process we recommend you take when porting your project to .NET Core
 
 2. Retarget all projects you wish to port to target the .NET Framework 4.7.2 or higher.
 
-   This step ensures that you can use API alternatives for .NET Framework-specific targets when .NET Core doesn't support a particular API.
+   This step ensures that you can use API alternatives for .NET Framework-specific targets when .NET Core doesn't support a particular API. ()
 
 3. Use the [.NET Portability Analyzer](../../standard/analyzers/portability-analyzer.md) to analyze your assemblies and develop a plan to port based on its results.
 
@@ -36,7 +36,7 @@ The following list shows tools you might find helpful to use during the porting 
 * .NET Portability Analyzer - [command line tool](https://github.com/Microsoft/dotnet-apiport/releases) or [Visual Studio Extension](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer), a tool that can generate a report of how portable your code is between .NET Framework and your target .NET Core platform. The report contains an assembly-by-assembly breakdown of the Type and APIs missing on the target .NET Core platform. For more information, see [.NET Portability Analyzer](../../standard/analyzers/portability-analyzer.md). It is recommended to run the .NET Portability Analyzer tool before you start porting, as it will help you identify any gaps in missing APIs.
 * .NET API Analyzer - A Roslyn analyzer that discovers .NET Standard API that throws <xref:System.PlatformNotSupportedException> on some platforms, detects calls to deprecated APIs, and discovers some other potential compatibility risks for C# APIs on different platforms. For more information, see [.NET API analyzer](../../standard/analyzers/api-analyzer.md). This analyzer is helpful after you already created your .NET Core project to identify runtime behavior differences on different platforms.
 * Reverse Package Search - A [useful web service](https://packagesearch.azurewebsites.net) that allows you to search for a type and find packages containing that type.
-
+* Target Framework migrator - A [Visualstudio Extension] (https://marketplace.visualstudio.com/items?itemName=PavelSamokha.TargetFrameworkMigrator) that migrates all your .Net projects to another .Net Framework Version at once. 
 Additionally, you can attempt to port smaller solutions or individual projects to the .NET Core project file format with the [CsprojToVs2017](https://github.com/hvanbakel/CsprojToVs2017) tool.
 
 > [!WARNING]
